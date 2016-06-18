@@ -1,4 +1,4 @@
 var x = 2;
 var y = 4;
-var sum = x * y;
-console.log(sum)
+var product = x * y;
+console.log(product)
