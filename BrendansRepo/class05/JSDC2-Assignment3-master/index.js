@@ -3,17 +3,14 @@
  * then logs "Blast Off!"
  */
 
- var myArray = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+ function countdown() {
+ 	for (var i = 10; i >0; i--) {
+ 		console.log(i);
+ 	}
+ 	console.log('Blast Off!');
+ }
 
- function countdown(arr, func) {
- 	for (i = 0; i < arr.length; i++)
- 		console.log(arr[i]);
- 	if (i <= arr.length) {
- 		console.log('Blast Off');
- 	};
- };
 
- countdown(myArray, console.log);
 
 
 
@@ -24,30 +21,26 @@
  */
 
  function max(x, y) {
- 	if (x > y)
- 		console.log(x)
- 	if (x <= y)
- 		console.log(y)
+ 	if (x > y) {
+ 		return x;
+ 	} else {
+ 		return y;
+ 	}	
  }
-
- max(1, 8);
-
 
 /**
  * Q2: Write a function called `longer` that has two String parameters and returns
  * the String that is longer.
  */
- var myFirstarray = [1, 2, 3, 4, 5]
- var mySecondarray = [18, 19, 20, 21, 22, 23, 24, 25]
 
  function longer(x, y) {
- 	if (x.length > y.length)
- 		console.log(myFirstarray)
- 	if (x.length <= y.length)
- 		console.log(mySecondarray)
+ 	if (x.length > y.length) {
+ 		return x;
+ 	} else {
+ 		return y;
+ 	}
  }
 
-longer(myFirstarray, mySecondarray);
 
 
 /**
@@ -55,14 +48,11 @@ longer(myFirstarray, mySecondarray);
  * if the number is even and `false` otherwise.
  */
  function isEven(num) {
- 	if (num % 2 === 0)
- 		console.log(num + ' is an even number')
- 	if (num % 2 > 0)
- 		console.log(num + ' is an odd number')
- }
-
- isEven(9);
-
+ 	if (num % 2 === 0) {
+ 		return true;
+ 	}
+ 	return false;
+ } /// you don't have to add an else statement in the above case b/c we used return. Return stops executing a function whenever it is used. ///
 
  /**
   * Q4: Write a function called `getAreaOfCircle` that has a Number parameter
@@ -70,11 +60,8 @@ longer(myFirstarray, mySecondarray);
   */
 
   function getAreaOfCircle(radius) {
-  	console.log(Math.PI * Math.pow(radius, 2));
+  	return Math.PI * Math.pow(radius, 2);
   }
-
-  getAreaOfCircle(5);
-
 
 
 
@@ -93,24 +80,19 @@ longer(myFirstarray, mySecondarray);
  	lastName: 'Evans'
  }
 
-function getFullName(x) {
-	console.log(name.firstName + ' ' + name.lastName);
+function getFullName(name) {
+	return name.firstName + ' ' + name.lastName;
 }
-getFullName(name)
+
 /**
  * Q6: Write a function called `reverseString` that has a String parameter and returns
  * the String reversed. Hint: look up `.split()`
  */
 
- var bee = "bee like me"
-
  function reverseString(x) {
- 	var answer = [x.split];
- 	var newAnswer = answer.reverse();
- 	console.log(newAnswer);
+ 	return x.split('').reverse().join('');
  }
 
-reverseString(bee);
 
 /**
  * Q7: Write a function called `maxArray` that has one Array of Numbers parameter and returns
@@ -120,10 +102,23 @@ reverseString(bee);
  var numberList = [1, 2, 3, 4, 5, 85, 6, 7, 99, 2, 5, 8]
 
  function maxArray(array) {
- 	console.log(Math.max.apply(Math, array));
+ 	return Math.max.apply(Math, array);
  };
 
-maxArray(numberList);
+ /// Teacher's solution using forEach ///
+
+function maxArray(arr) {
+	var largestSoFar = arr[0];
+
+	arr.forEach(function(num) {
+		if (num > largestSoFar) {
+			largestSoFar = num;
+		}
+	});
+	return largestSoFar;
+}
+
+
 
 /**
  * Q8: Create an Object that has each of the above functions as values.
@@ -136,19 +131,36 @@ maxArray(numberList);
  */
 
  var master = {
- 	q0: countdown(),
- 	q1: max(),
- 	q2: longer(),
- 	q3: isEven(),
- 	q4: getAreaOfCircle(),
- 	q5: getFullName(),
- 	q6: reverseString(),
- 	q7: maxArray()
- }
+ 	q0: countdown,
+ 	q1: max,
+ 	q2: longer,
+ 	q3: isEven,
+ 	q4: getAreaOfCircle,
+ 	q5: getFullName,
+ 	q6: reverseString,
+ 	q7: maxArray
+ };
 
  /**
   * Q9: Use the Object from Q8 to call all of the functions you've created.
   */
-console.log(call(master));
-
+// Call countdown
+master.q0();
+// Call max
+console.log(master.q1(2, 3));
+// Call longer
+console.log(master.q2('hello', 'world'));
+// Call isEven
+console.log(master.q3(9));
+// Call getAreaOfCircle
+console.log(master.q4(6));
+/// Call getFullName
+console.log(master.q5( {
+	firstName: 'Bob',
+	lastName: 'Dole'
+}));
+//call reverseString
+console.log(master.q6('dlrow olleh'));
+/// call maxArray
+console.log(master.q7([1, 4, 8, 2, -1, 2]));
 
