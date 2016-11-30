@@ -1,0 +1,87 @@
+{
+  "id": "review",
+  "name": "Review Quiz",
+  "questions": [
+    {
+      "q": "Which of the following is not an event we can listen for in JavaScript",
+      "a": "e",
+      "choices": {
+        "a": "click",
+        "b": "scroll",
+        "c": "key press",
+        "d": "window resize",
+        "e": "All of these are valid events"
+      }
+    },
+    {
+      "q": "What is an event listener or handler?",
+      "a": "b",
+      "choices": {
+        "a": "A value that changes when an event occurs",
+        "b": "A function that is called when an event occurs",
+        "c": "A developer that writes code for certain JavaScript events",
+        "d": "An object that contains information about a JavaScript event"
+      }
+    },
+    {
+      "q": "How many event listeners can be 'attached' to a single DOM element?",
+      "a": "d",
+      "choices": {
+        "a": 1,
+        "b": 5,
+        "c": 10,
+        "d": "No limit"
+      }
+    },
+    {
+      "q": "When an event 'bubbles' how far up the DOM tree does it travel?",
+      "a": "a",
+      "choices": {
+        "a": "All the way",
+        "b": "To the element's direct parent",
+        "c": "3 generations",
+        "d": "Trick question, it travels down to the children"
+      }
+    },
+    {
+      "q": "What strategy could we use to listen for events on dynamic HTML elements that are not present when the page first loads?",
+      "a": "d",
+      "choices": {
+        "a": "Use a delegated event listener on a static parent element",
+        "b": "Attach event listeners to new elements when they are added to the DOM",
+        "c": "Make the dynamic elements static and use JavaScript to change their css `visibility`",
+        "d": "All of these could work"
+      }
+    },
+    {
+      "q": "What does `this` represent in the following code:\n```$('button').on('mouseover', function() {\n  $(this).css('padding', '15px');\n});\n```",
+      "a": "c",
+      "choices": {
+        "a": "All `button` elements on the page",
+        "b": "The jQuery function",
+        "c": "The button that was hovered over",
+        "d": "The hover event object"
+      }
+    },
+    {
+      "q": "What is not a reason for the 'Separation of Concerns' design pattern?",
+      "a": "a",
+      "choices": {
+        "a": "It significantly reduces the amount of code",
+        "b": "It makes code easier to reason about",
+        "c": "It allows applications to scale",
+        "d": "It works for applications of all sizes"
+      }
+    },
+    {
+      "q": "What is the 'concern' of the Model in an MVC architecture?",
+      "a": "b",
+      "choices": {
+        "a": "Providing a template for displaying data to the user",
+        "b": "Representing the application's state in JavaScript",
+        "c": "Rendering data to HTML",
+        "d": "Communicating among various parts of the application"
+      }
+    }
+  ]
+}

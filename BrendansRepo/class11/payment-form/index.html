@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Payment Form</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <input type="text" name="firstName" placeholder="First Name" />
+        <input type="text" name="lastName" placeholder="Last Name"/>
+        <input type="text" name="cardNumber" placeholder="Card Number (XXXX-XXXX-XXXX-XXXX)"/>
+        <input type="text" name="expiration" placeholder="Expiration (MM/YY)"/>
+        <input type="text" name="cvv" placeholder="CVV (XXX)"/>
+      </form>
+
+      <div id="cardContainer">
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+  	<script type="text/javascript" src="js/index.js"></script>
+    <script id="card-template" type="text/x-handlebars-template">
+      <div class="card">
+        <h2 class="card-name">{{firstName}} {{lastName}}</h2>
+        <div class="card-number">{{cardNumber}}</div>
+        <div class="exp-label">Exp:</div>
+        <div class="card-exp">{{expiration}}</div>
+        <div class="cvv-label">CVV:</div>
+        <div class="card-cvv">{{cvv}}</div>
+      </div>
+    </script>
+  </body>
+</html>
