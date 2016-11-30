@@ -42,6 +42,22 @@ $(document).ready(function() {
     // 1. Make the request to OpenWeatherMap API
     // 2. Update model
     // 3. Render view
+    var url = 'http://api.openweathermap.org/data/2.5/weather?q=';
+    /// add on (concatenate) the city and country that the user entered to the url as well as my unique app ID///
+    url += city + ',' + country;
+    url += '&units=imperial'
+    url += '&appID=6e1fa984031e8007408684cbc0f265c7';
+
+  $.get(url, function(data) {
+        weather.city = city;
+        weather.country = country; 
+        weather.temperature = data.main.temp;
+        weather.description = data.weather.description;
+        weather.humidity = data.main.humidity;
+        weather.clouds = data.clouds.all;
+
+        renderWeather();
+  })
 
   });
 });
