@@ -10,16 +10,25 @@ var model = {
 // View
 
 var formTemplate;
+var successTemplate;
 function compileTemplate() {
-
   var formTemplateSource = $('#form-template').html();
   formTemplate = Handlebars.compile(formTemplateSource);
-}
+
+  var successTemplateSource = $('#success-template').html();
+  successTemplate = Handlebars.compile(successTemplateSource);
+};
+
 
 function renderForm() {
   var formHtml = formTemplate(model);
   $('#formContainer').html(formHtml);
-}
+};
+
+function renderSuccess() {
+  var successHtml = successTemplate(model);
+  $('#successContainer').html(successHtml);
+};
 
 // Controller
 
@@ -33,13 +42,14 @@ $('#formContainer').on('click', '#submitbutton', handleSubmit)
 };
 
 
-
 function handleSubmit() {
-	var email = $('input[type="email"]').val();
+  var email = $('input[type="email"]').val();
   $('input[type="email"]').val('');
-	firebase.database().ref('model').push({
+  firebase.database().ref('model').push({
     email: email,
   });
+
+  renderSuccess();
 }
 
 $(document).ready(setup);
