@@ -30,57 +30,187 @@
 
    <script id="form-template" type="text/x-handlebars-template">
 
+                        <!-- Basic Info -->
+
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
     <input name= "email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
-  <div class="form-group">
-    <label for="exampleSelect1">Example select</label>
-    <select class="form-control" id="exampleSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
+
+  <!-- full-name input-->
+  <div class="control-group">
+      <label class="control-label">Full Name</label>
+      <div class="controls">
+          <input id="full-name" name="full-name" type="text" placeholder="full name"
+          class="input-xlarge">
+          <p class="help-block"></p>
+      </div>
   </div>
-  <div class="form-group">
-    <label for="exampleTextarea">Example textarea</label>
-    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+
+                    <!-- Origin Address Input-->
+
+  <div class="control-group">
+      <label class="control-label"> Destination Address Line 1</label>
+      <div class="controls">
+          <input id="dest-address-line1" name="address-line1" type="text" placeholder="address line 1"
+          class="input-xlarge">
+          <p class="help-block">Street address, P.O. box, company name, c/o</p>
+      </div>
   </div>
-  <fieldset class="form-group">
-    <legend>Radio buttons</legend>
+
+  <div class="form-group">
+    <label for="originStreetNum">Origin Street Number</label>
+    <input name= "originStreetNum" type="text" class="form-control" id="originStreetNum" aria-describedby="streetHelp" placeholder="Enter street number">
+    <small id="streetHelp" class="form-text text-muted">This is the street number of your origin address.</small>
+  </div>
+
+  <div class="form-group">
+    <label for="originStreetName">Origin Street </label>
+    <input name= "originStreetName" type="text" class="form-control" id="originStreetName" aria-describedby="streetHelp" placeholder="Enter street name">
+    <small id="streetHelp" class="form-text text-muted">This is the street name of your origin address.</small>
+  </div>
+
+  <div class="form-group">
+    <label for="originStreetType">Origin Street Type </label>
+    <input name= "originStreetType" type="text" class="form-control" id="originStreetType" aria-describedby="streetHelp" placeholder="Enter street name">
+    <small id="streetHelp" class="form-text text-muted">This is the street type, like Dr, Ln, St, etc.</small>
+  </div>
+
+  <div class="form-group">
+    <label for="originCity">Origin City </label>
+    <input name= "originCity" type="text" class="form-control" id="originCity" aria-describedby="cityHelp" placeholder="Enter city name">
+    <small id="cityHelp" class="form-text text-muted">This is the city of your origin address.</small>
+  </div>
+
+  <div class="form-group">
+    <label for="originState">Origin State </label>
+    <input name= "originState" type="text" class="form-control" id="originState" aria-describedby="stateHelp" placeholder="Enter state initials">
+    <small id="stateHelp" class="form-text text-muted">This is the state of your origin address.</small>
+  </div>
+
+                <!-- Destination Address Input-->
+
+  <div class="form-group">
+    <label for="destinationStreetNum">Destination Street Number</label>
+    <input name= "destinationStreetNum" type="text" class="form-control" id="destinationStreetNum" aria-describedby="streetHelp" placeholder="Enter street number">
+    <small id="streetHelp" class="form-text text-muted">This is the street number of your destination address.</small>
+  </div>
+
+  <div class="form-group">
+    <label for="destinationStreetName">Destination Street </label>
+    <input name= "destinationStreetName" type="text" class="form-control" id="destinationStreetName" aria-describedby="streetHelp" placeholder="Enter street name">
+    <small id="streetHelp" class="form-text text-muted">This is the street name of your destination address.</small>
+  </div>
+
+  <div class="form-group">
+    <label for="destinationStreetType">Destination Street Type </label>
+    <input name= "destinationStreetType" type="text" class="form-control" id="destinationStreetType" aria-describedby="streetHelp" placeholder="Enter street type">
+    <small id="streetHelp" class="form-text text-muted">This is the street type, like Dr, Ln, St, etc.</small>
+  </div>
+
+  <div class="form-group">
+    <label for="destinationCity">Destination City </label>
+    <input name= "destinationCity" type="text" class="form-control" id="destinationCity" aria-describedby="cityHelp" placeholder="Enter city name">
+    <small id="cityHelp" class="form-text text-muted">This is the city of your destination address.</small>
+  </div>
+
+  <div class="form-group">
+    <label for="destinationState">Destination State </label>
+    <input name= "destinationState" type="text" class="form-control" id="destinationState" aria-describedby="stateHelp" placeholder="Enter state initials">
+    <small id="stateHelp" class="form-text text-muted">This is the state of your destination address.</small>
+  </div>
+
+                    <!--Apartment Details-->
+
+  <div class="form-group row">
+    <label for=exampleCheckbox>How will we access each apartment? (please check all that apply)</label>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox1" value="option1">
+            Elevator at my current address
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox2" value="option2">
+            Elevator at my new address
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox3" value="option3">
+            Stairs at my current address
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox4" value="option4">
+            Stairs at my new address
+          </label>
+          <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox5" value="option5">
+            No stairs or elevator (both addresses on ground floor)
+          </label>
+        </div>
+        </div>
+      </div>
+    </div>
+
+<div class="form-check" id="currentStairs" style="display: none">
+  <div class="form-check">
+      <label class="form-check-label">How many flights of stairs are there at your current address?<br>
+        <input class="form-check-input" type="radio" name="exampleRadios" id="currentStairsRadios1" value="option1">
+        1
+      </label>
+  </div>
     <div class="form-check">
       <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-        Option one is this and that&mdash;be sure to include why it's great
+        <input class="form-check-input" type="radio" name="exampleRadios" id="currentStairsRadios2" value="option2">
+        2
       </label>
-    </div>
-    <div class="form-check">
-    <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
-        Option two can be something else and selecting it will deselect option one
-      </label>
-    </div>
-    <div class="form-check">
-    <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3">
-        Option three is disabled
-      </label>
-    </div>
-  </fieldset>
-  <div class="form-check">
-    <label class="form-check-label">
-      <input type="checkbox" class="form-check-input">
-      Check me out
-    </label>
   </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="currentStairsRadios3" value="option3">
+        3
+      </label>
+    </div>
+</div>
+
+<div class="form-check" id="newStairs" style="display: none">
+  <div class="form-check">
+      <label class="form-check-label">How many flights of stairs are there at your new address?<br>
+        <input class="form-check-input" type="radio" name="exampleRadios" id="newStairsRadios1" value="option1">
+        1
+      </label>
+  </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="newStairsRadios2" value="option2">
+        2
+      </label>
+  </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="newStairsRadios3" value="option3">
+        3
+      </label>
+    </div>
+</div>
+
+                    <!-- Submit Button-->
+
   <button id= "submitbutton" type="submit" class="btn btn-primary">Submit</button>
 </script>
 
+                    <!-- Post-Submit Screen-->
+
     <script id="success-template" type="text/x-handlebars-template">
-      <h1>Thanks for submitting!</h1>
+      <h2>Thanks for submitting!</h2>
+      <div class="distance">DISTANCE<{{distance}}</div>
     </script>
 
       
