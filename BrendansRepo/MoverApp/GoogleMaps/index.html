@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body onload="setup()">
+	<div>
+	    START <input id="address" type="textbox" name="address1" value="Washington, DC">
+	    END <input id="address2" type="text" name="address2" value="Bethesda, MD">
+	    <input type="button" value="Submit" onclick="codeAddress()">
+	</div><br>
+	
+	<div id="map" style="width: 400px; height: 400px;"></div><br>
+
+	<div><strong>DISTANCE:</strong><br>
+	<span id="results"></span>
+	</div>
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyBMM7DrzI1EkXaptKDqMmeJ_NoeeM6P_30"></script>
+
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>
+

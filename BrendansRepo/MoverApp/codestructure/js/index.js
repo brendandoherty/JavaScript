@@ -85,9 +85,35 @@ var destinationStreetType = $('input[id="destinationStreetType"]').val();
 var destinationCity = $('input[id="destinationCity"]').val();
 var destinationState = $('input[id="destinationState"]').val();
 
+
+
+
 var addressTest = addressLine1.split(" ")
 
-var newAddress = addressTest[0] + '+' + addressTest[1] + '+' + addressTest[2] + '+' + addressTest[3]
+console.log(addressTest);
+
+
+function countArray(arr, func) {
+  var string;
+  for (i = 0; i < arr.length; i++) {
+    string += arr[i] + '+';
+  }
+  return string;
+ };
+
+ var answer = countArray(addressTest);
+
+var str = addressLine1;
+var newAddress = str.split(",");
+for ( var i = 0; i < newAddress.length; i++ ) {
+    console.log(newAddress[i])
+}
+str = newAddress.join("");
+console.log(str)
+
+
+
+
 
 var url = 'https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=';
 url += newAddress + '+' + originCity + '+' + originState + '&destinations=';
