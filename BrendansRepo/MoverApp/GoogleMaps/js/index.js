@@ -41,59 +41,44 @@ function calcRoute(directionsService, directionsDisplay) {
     stopover: true
   });
 
-	directionsService.route({
+  var request = {
     origin: start,
     destination: end,
     waypoints: waypts,
     optimizeWaypoints: true,
-    travelMode: 'DRIVING'
-  }, function(response, status) {
+    travelMode: 'DRIVING',
+    unitSystem: google.maps.UnitSystem.IMPERIAL
+  }
+
+	directionsService.route(request, function(response, status) {
     if (status === 'OK') {
       directionsDisplay.setDirections(response);
+      calcDistance(response);
     } else {
       window.alert('Directions request failed due to ' + status);
     }
   });
-
-	calculateDistance();
 }
-
 
 // calculate and display the distance in miles between the two addresses 
-function calculateDistance() {
-	var start = document.getElementById('address1').value;
-	var end = document.getElementById('address2').value;
+
+function calcDistance(result) {
+  var totalDist = 0;
+  var myRoute = result.routes[0];
+  var legDist = '';
 
 
-	service.getDistanceMatrix(
-	{
-		origins: [start],
-		destinations: [end],
-		travelMode: 'DRIVING',
-		unitSystem: google.maps.UnitSystem.IMPERIAL
-	}, renderDistance);
-};
-
-function renderDistance(response, status) {
-  if (status == 'OK') {
-    var origins = response.originAddresses;
-    var destinations = response.destinationAddresses;
-
-    for (var i = 0; i < origins.length; i++) {
-      var results = response.rows[i].elements;
-      for (var j = 0; j < results.length; j++) {
-        var element = results[j];
-        var distance = element.distance.text;
-        var duration = element.duration.text;
-        var from = origins[i];
-        var to = destinations[j];
-
-        document.getElementById('results').innerHTML = distance;
-        document.getElementById('originList').innerHTML = origins;
-      }
-    }
+  for (var i = 0; i < myRoute.legs.length; i++) {
+    totalDist += myRoute.legs[i].distance.value;
+    legDist += myRoute.legs[i].distance.text;
   }
+
+  totalDist = Number(totalDist * 0.000621371192).toFixed(2);
+
+  document.getElementById("results").innerHTML = totalDist + " miles"
+  document.getElementById("summary").innerHTML = "Distance: " + legDist;
 }
+
 
 
 
