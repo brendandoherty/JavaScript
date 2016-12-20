@@ -69,3 +69,13 @@ function codeAddress() {
     });
 
 }
+
+
+/// if you want to log all the addresses in an array on a map with directions in between, use this loop for the waypoints
+
+for (var i = 0; i < uhaul.length; i++) {
+  waypts.push({
+    location: uhaul[i],
+    stopover: true
+  });
+}
