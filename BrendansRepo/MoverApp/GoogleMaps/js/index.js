@@ -1,6 +1,6 @@
 // MODEL
 
-var uhaul = ['2215 5th St NE Washington DC', '3378 Stephenson St NW', '4201 Massachusettes Ave NW'];
+var uhaul = ['2215 5th St NE Washington DC', '26 K St NE Washington DC', '1501 S Capitol St SW Washington DC', '6889 New Hampshire Ave, Takoma Park, MD'];
 
 
 
@@ -32,20 +32,16 @@ var service = new google.maps.DistanceMatrixService();
 
 // plot the start and end addresses on a map with the route drawn between them
 function calcRoute(directionsService, directionsDisplay) {
-	var start = document.getElementById('address1').value;
-	var end = document.getElementById('address2').value;
-  var waypts = [];
-
-  waypts.push({
-    location: uhaul[0],
-    stopover: true
-  });
+  var moveOut = document.getElementById('address1').value;
+	var moveIn = document.getElementById('address2').value;
+  var bestUhaul = uhaul[0];
 
   var request = {
-    origin: start,
-    destination: end,
-    waypoints: waypts,
-    optimizeWaypoints: true,
+    origin: bestUhaul,
+    destination: bestUhaul,
+    waypoints: [{location: moveOut}, {location: moveIn}],
+    optimizeWaypoints: false,
+    provideRouteAlternatives: true,
     travelMode: 'DRIVING',
     unitSystem: google.maps.UnitSystem.IMPERIAL
   }
@@ -54,6 +50,7 @@ function calcRoute(directionsService, directionsDisplay) {
     if (status === 'OK') {
       directionsDisplay.setDirections(response);
       calcDistance(response);
+
     } else {
       window.alert('Directions request failed due to ' + status);
     }
@@ -65,18 +62,17 @@ function calcRoute(directionsService, directionsDisplay) {
 function calcDistance(result) {
   var totalDist = 0;
   var myRoute = result.routes[0];
-  var legDist = '';
-
+  var legDist = result.routes[0].legs[0].distance.value;
 
   for (var i = 0; i < myRoute.legs.length; i++) {
     totalDist += myRoute.legs[i].distance.value;
-    legDist += myRoute.legs[i].distance.text;
   }
 
   totalDist = Number(totalDist * 0.000621371192).toFixed(2);
+  firstLegDist = Number(legDist * 0.000621371192).toFixed(2);
 
   document.getElementById("results").innerHTML = totalDist + " miles"
-  document.getElementById("summary").innerHTML = "Distance: " + legDist;
+  document.getElementById("summary").innerHTML = "Distance: " + firstLegDist + " miles";
 }
 
 
