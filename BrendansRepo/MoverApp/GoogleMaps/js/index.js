@@ -3,7 +3,6 @@
 var uhaul = ['2215 5th St NE Washington DC', '26 K St NE Washington DC', '1501 S Capitol St SW Washington DC', '6889 New Hampshire Ave, Takoma Park, MD'];
 
 
-
 /// Google Maps Variables
 var geocoder, address1, address2;
 var map;
@@ -29,11 +28,55 @@ var service = new google.maps.DistanceMatrixService();
 
 // CONTROLLER
 
+var uhaulOne = '2215 5th St NE Washington DC'
+var uhaulTwo = '26 K St NE Washington DC'
+var uhaulThree = '1501 S Capitol St SW Washington DC'
+var destinationA = '3212 Morrison St NW Washington DC';
+var service = new google.maps.DistanceMatrixService();
+var origin;
+
+for (var i = 0; i < uhaul.length; i++) {
+  origin += uhaul[i]
+  }
+
+service.getDistanceMatrix( {
+    origins: [origin],
+    destinations: [destinationA],
+    travelMode: 'DRIVING',
+    unitSystem: google.maps.UnitSystem.IMPERIAL
+}, callback)
+
+function callback(response, status) {
+  if (status == 'OK') {
+    var origins = response.originAddresses;
+    var destinations = response.destinationAddresses;
+
+    for (var i = 0; i < origins.length; i++) {
+      var results = response.rows[i].elements;
+      for (var j = 0; j < results.length; j++) {
+        var element = results[j];
+        var distance = element.distance.text;
+        var duration = element.duration.text;
+        var from = origins[i];
+        var to = destinations[j];
+
+        document.getElementById("uhaul").innerHTML = distance 
+      }
+    }
+  }
+}
+
+
+
+
+  
+
 
 // plot the start and end addresses on a map with the route drawn between them
+var moveOut = document.getElementById('address1').value;
+var moveIn = document.getElementById('address2').value;
+
 function calcRoute(directionsService, directionsDisplay) {
-  var moveOut = document.getElementById('address1').value;
-	var moveIn = document.getElementById('address2').value;
   var bestUhaul = uhaul[0];
 
   var request = {
