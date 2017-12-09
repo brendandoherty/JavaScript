@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Max Points, LLC</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <!-- Our Custom CSS -->
+  <link href="css/style.css" type="text/css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+  <!-- Start Dashboard HTML -->
+
+  <!-- Sidebar Navigation -->
+  <div class="row">
+  <div class="nav-side-menu">
+    <div class="brand">
+      <img src="http://res.cloudinary.com/maxpoints/image/upload/v1512766828/maxpointslogo_b7zljz.png" alt="Max Points" style="max-height: 120px; padding: 20px;">
+    </div>
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+    <div class="menu-list col-xs-12">
+      <ul id="menu-content" class="menu-content collapse out">
+        <li>
+          <a href="#">
+            <i class="fa fa-plane fa-lg"></i> Travel Report
+          </a>
+        </li>
+        <li>
+          <a id="redeem" href="#">
+            <i class="fa fa-dashboard fa-lg"></i> Redeem
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-money fa-lg"></i> Spending Report
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-gear fa-lg"></i> Settings
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+  <!-- End Sidebar Navigation -->
+
+  <!-- Main Content -->
+
+  <!-- Start Travel Report Tab -->
+  <div class="container" id="main">
+    <div class="col-md-12 text-center">
+      <h2>Your Personal Travel Report</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Using the Google Docs PDF viewer iFrame below. Will need to use logic to change the URL to the correct PDF stored in the database -->
+        <iframe src="http://docs.google.com/gview?url=http://res.cloudinary.com/maxpoints/image/upload/v1512599775/bill_of_lading_delivery_wbjvu4.pdf&embedded=true"
+          style="width:600px; height:500px;" frameborder="0"></iframe>
+      </div>
+    </div>
+    <!-- Only show this if the user has not used their one-time phone call already -->
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h4>Schedule Your One-Time Phone Consultation</h4>
+        <a class="btn btn-primary" href="http://calendly.com/maxpoints/max">Schedule Now</a>
+      </div>
+    </div>
+  </div>
+  <!-- End Travel Report Tab -->
+
+  <!-- Start Redeem Tab -->
+  <div class="container" id="main" style="display: none">
+    <div class="col-md-12 text-center">
+      <h2>Redeem Travel</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <!-- This will be a Clickdata embed -->
+        <iframe src="http://docs.google.com/gview?url=http://res.cloudinary.com/maxpoints/image/upload/v1512599775/bill_of_lading_delivery_wbjvu4.pdf&embedded=true"
+          style="width:600px; height:500px;" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+  <!-- End Redeem Tab -->
+
+  <!-- Start Spending Report Tab -->
+  <div class="container" id="main" style="display: none">
+    <div class="col-md-12 text-center">
+      <h2>Your Spending Report</h2>
+    </div>
+    <div class="row" style="padding-left: 15px;">
+      <div class="col-md-12">
+        <h5>Credit Score:</h5>
+        <p>600</p>
+        <h5>Average Monthly Spending:</h5>
+        <p>$2,000</p>
+        <h5>Credit Cards:</h5>
+        <ul>
+          <li>Chase Freedom</li>
+          <li>Citi Double Cash</li>
+          <li>Discover</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End Spending Report Tab -->
+
+  <!-- Start Settings Tab -->
+  <div class="container" id="main" style="display: none">
+      <div class="col-md-12 text-center">
+        <h2>Settings</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <button class="btn btn-secondary">Update Email / Password</button>
+        </div>
+      </div>
+    </div>
+    <!-- End Settings Tab -->
+
+  <!-- End Main Content -->
+
+  <!-- End Dashboard HTML -->
+
+  </script>
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS, then Handlebars JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+    crossorigin="anonymous"></script>
+
+  <script src="https://use.fontawesome.com/2f763d16cd.js"></script>
+
+
+  <!-- Bringing In Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBBoG2Za2ztYkWfsfnn4PyIfXp7FWCQxIk",
+      authDomain: "maxpoints-basic.firebaseapp.com",
+      databaseURL: "https://maxpoints-basic.firebaseio.com",
+      projectId: "maxpoints-basic",
+      storageBucket: "maxpoints-basic.appspot.com",
+      messagingSenderId: "827690888056"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <!-- Bringing in Logic -->
+  <script type="text/javascript" src="js/index.js"></script>
+
+</body>
+
+</html>
